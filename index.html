@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KakPay - Cross-Border Payment System</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Satoshi', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: url('https://via.placeholder.com/40') no-repeat center center/cover;
+            border-radius: 5px;
+        }
+        .logo-text {
+            color: white;
+        }
+        nav.header-nav {
+            display: flex;
+            gap: 1rem;
+        }
+        nav.header-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        nav.header-nav a:hover {
+            color: #ffffffcc;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: url('https://via.placeholder.com/1200x300') no-repeat center center/cover;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Form Section */
+        .form-section {
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        input, select, button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        button {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background: linear-gradient(135deg, #0056b3, #007bff);
+        }
+
+        /* Currency Tracker */
+        .currency-tracker {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .currency-tracker span {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        footer .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        footer p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header, footer {
+                padding: 1rem;
+            }
+            nav.header-nav {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <div class="logo-icon"></div>
+            <div class="logo-text">KakPay</div>
+        </div>
+        <nav class="header-nav">
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h2>Fast, Affordable, and Secure Cross-Border Payments</h2>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2>Welcome to KakPay</h2>
+        <p>KakPay is a revolutionary cross-border payment system designed to facilitate seamless and secure transfers of funds between Nigerian Naira (NGN) and Belarusian Rubles (BYN).</p>
+
+        <!-- Form Section -->
+        <div class="form-section">
+            <h3>Send Money Now</h3>
+            <form id="transferForm">
+                <label for="amount">Enter Amount:</label>
+                <input type="number" id="amount" name="amount" required>
+
+                <label for="sourceCurrency">Source Currency:</label>
+                <select id="sourceCurrency" name="sourceCurrency" required>
+                    <option value="NGN">NGN</option>
+                    <option value="BYN">BYN</option>
+                </select>
+
+                <label for="depositOption">Select Deposit Option:</label>
+                <select id="depositOption" name="depositOption" required>
+                    <optgroup label="Nigerian Banks">
+                        <option value="Access Bank">Access Bank</option>
+                        <option value="GTBank">GTBank</option>
+                        <option value="Zenith Bank">Zenith Bank</option>
+                        <option value="First Bank">First Bank</option>
+                        <option value="Kuda Bank">Kuda Bank</option>
+                        <option value="PalmPay">PalmPay</option>
+                        <option value="MoniePoint">MoniePoint</option>
+                    </optgroup>
+                </select>
+
+                <label for="targetCurrency">Target Currency:</label>
+                <select id="targetCurrency" name="targetCurrency" required>
+                    <option value="BYN">BYN</option>
+                    <option value="NGN">NGN</option>
+                </select>
+
+                <label for="withdrawalOption">Select Withdrawal Option:</label>
+                <select id="withdrawalOption" name="withdrawalOption" required>
+                    <optgroup label="Belarusian Banks">
+                        <option value="Belarusbank">Belarusbank</option>
+                        <option value="Priorbank">Priorbank</option>
+                        <option value="MTBank">MTBank</option>
+                        <option value="Alfa Bank">Alfa Bank</option>
+                        <option value="Belinvestbank">Belinvestbank</option>
+                        <option value="Sberbank">Sberbank</option>
+                        <option value="BPS-Sberbank">BPS-Sberbank</option>
+                    </optgroup>
+                    <optgroup label="ERIP System">
+                        <option value="ERIP Utility Payments">ERIP Utility Payments</option>
+                        <option value="ERIP Mobile Recharge">ERIP Mobile Recharge</option>
+                    </optgroup>
+                </select>
+
+                <button type="submit">Transfer Funds</button>
+            </form>
+        </div>
+
+        <!-- Currency Tracker -->
+        <div class="currency-tracker">
+            <span>Current Exchange Rate: 1 NGN = 0.001 BYN | 1 BYN = 1000 NGN</span>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="logo">
+            <div class="logo-icon"></div>
+            <div class="logo-text">KakPay</div>
+        </div>
+        <p>&copy; 2023 KakPay. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Placeholder for future functionality
+    </script>
+</body>
+</html>
